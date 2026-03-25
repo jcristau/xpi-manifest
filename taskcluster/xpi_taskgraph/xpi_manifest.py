@@ -41,6 +41,7 @@ base_schema = Schema(
         Optional("enable-test"): bool,
         Optional("release-tag"): str,
         Optional("release-name"): str,
+        Optional("version-bump"): dict,
     }
 )
 

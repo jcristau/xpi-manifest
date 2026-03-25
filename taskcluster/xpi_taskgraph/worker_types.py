@@ -11,7 +11,7 @@ from voluptuous import Any, Optional, Required
 
 
 @payload_builder(
-    "scriptworker-signing",
+    "scriptworker-signing-old",
     schema={
         # the maximum time to run, in seconds
         Required("max-run-time"): int,

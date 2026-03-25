@@ -175,6 +175,11 @@ workers:
             implementation: scriptworker-balrog
             os: scriptworker
             worker-type: 'xpi-{level}-balrog'
+        lando:
+            provisioner: scriptworker-k8s
+            implementation: scriptworker-lando
+            os: scriptworker
+            worker-type: 'xpi-{level}-lando'
         signing:
             provisioner: scriptworker-k8s
             implementation: scriptworker-signing

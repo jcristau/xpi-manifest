@@ -12,3 +12,6 @@ addon-type: system
 install-type: mach
 enable-github-release: False
 enable-test: False
+version-bump:
+  path: browser/extensions/newtab/manifest.json
+  type: minor

@@ -1,0 +1,26 @@
+---
+transforms:
+    - xpi_taskgraph.transforms.manifest_matrix
+    - taskgraph.transforms.matrix
+    - xpi_taskgraph.transforms.version_bump
+    - taskgraph.transforms.task
+
+kind-dependencies:
+    - beetmover
+
+tasks:
+    xpi:
+        from-manifests: true
+        description: Tag release and bump version number
+        attributes:
+            shipping_phase: ship
+        run-on-tasks-for: []
+        worker-type: lando
+        worker:
+            implementation: scriptworker-lando
+            lando-repo: firefox-main
+            actions:
+                - tag:
+                      types: [release]
+                      hg-repo-url: https://hg.mozilla.org/mozilla-central
+                - version-bump: {}
